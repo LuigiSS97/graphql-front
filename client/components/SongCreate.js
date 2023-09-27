@@ -2,6 +2,7 @@ import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import { Link, hashHistory } from "react-router";
+import query from "../queries/fetchSongs.js";
 
 function SongCreate(props) {
   const [song, setSong] = React.useState("");
@@ -15,6 +16,7 @@ function SongCreate(props) {
       variables: {
         title: song,
       },
+      refetchQueries: [{ query }],
     }).then(() => hashHistory.push("/"));
   };
 
