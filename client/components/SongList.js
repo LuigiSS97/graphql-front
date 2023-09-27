@@ -11,7 +11,7 @@ function SongList(props) {
   return (
     <ul>
       {songs.map((song) => (
-        <li></li>{song.title}</li>
+        <li>{song.title}</li>
       ))}
     </ul>
   );
