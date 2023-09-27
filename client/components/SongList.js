@@ -9,9 +9,11 @@ function SongList(props) {
     return <div>Loading...</div>;
   }
   return (
-    <ul>
+    <ul className="collection">
       {songs.map((song) => (
-        <li>{song.title}</li>
+        <li className="collection-item" key={song.id}>
+          {song.title}
+        </li>
       ))}
     </ul>
   );
@@ -21,6 +23,7 @@ const query = gql`
   {
     songs {
       title
+      id
     }
   }
 `;
